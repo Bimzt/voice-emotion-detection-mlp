@@ -1,21 +1,28 @@
 # Speech Emotion Recognition using MLP & Acoustic Features
-
-A machine learning pipeline for classifying human emotional states from speech audio using acoustic feature extraction (MFCC, Pitch, RMS Energy) and a Multi-Layer Perceptron classifier — achieving **79.49% accuracy** across 8 emotion categories on the RAVDESS dataset.
-
+ 
+A machine learning pipeline for classifying human emotional states from speech audio using acoustic feature extraction (MFCC, Pitch, RMS Energy) and a Multi-Layer Perceptron classifier achieving **79.49% accuracy** across 8 emotion categories on the RAVDESS dataset.
+ 
 ---
-
+ 
+## Motivation
+ 
+Understanding emotional states from voice has practical relevance across several domains mental health monitoring systems that detect distress in call center interactions, adaptive interfaces that respond to user frustration, and assistive tools for individuals with difficulty expressing emotion verbally. Most production systems in this space rely on expensive proprietary models or large neural architectures that require significant compute.
+ 
+This project approaches the problem from the other direction: how far can a lightweight, interpretable pipeline go using only handcrafted acoustic features and a shallow MLP? The answer, on a controlled dataset, is **~80% accuracy with under a second of inference per file** a useful baseline for understanding the ceiling of classical feature engineering on this task before reaching for transformer-based models.
+ 
+---
+ 
 ## Overview
-
+ 
 This project explores Speech Emotion Recognition (SER) by combining signal processing techniques with supervised machine learning. For each audio sample, the pipeline:
-
+ 
 1. Loads and normalizes the raw waveform
 2. Visualizes the signal in time domain, frequency domain (FFT), and spectrogram
 3. Extracts acoustic features: 40 MFCCs, average pitch (F0), and RMS energy
 4. Trains an MLPClassifier (128 → 64 hidden units) with StandardScaler normalization
 5. Evaluates using accuracy, classification report, and confusion matrix
-
 **Dataset:** [RAVDESS (Ryerson Audio-Visual Database of Emotional Speech and Song)](https://zenodo.org/record/1188976) a validated, actor-recorded dataset with 8 emotion labels.
-
+ 
 ---
 
 ## Emotion Classes
@@ -144,7 +151,7 @@ For each audio file, the following features are extracted and concatenated into 
 ## Limitations & Future Work
 
 - Dataset is English-language only (RAVDESS); cross-lingual generalization is untested
-- Small test set (39 samples) — results may vary with different random seeds
+- Small test set (39 samples) results may vary with different random seeds
 - No cross-validation; a single train/test split limits statistical reliability
 - Future improvements: add ZCR, Spectral Centroid, and Chroma features; experiment with CNN/LSTM on raw spectrograms; implement k-fold cross-validation
 
@@ -153,4 +160,4 @@ For each audio file, the following features are extracted and concatenated into 
 ## Acknowledgements
 
 - Livingstone SR, Russo FA (2018) *The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS)*. PLOS ONE.
-- [librosa](https://librosa.org/) — audio and music signal analysis library
+- [librosa](https://librosa.org/) audio and music signal analysis library
