@@ -14,7 +14,7 @@ This project explores Speech Emotion Recognition (SER) by combining signal proce
 4. Trains an MLPClassifier (128 → 64 hidden units) with StandardScaler normalization
 5. Evaluates using accuracy, classification report, and confusion matrix
 
-**Dataset:** [RAVDESS (Ryerson Audio-Visual Database of Emotional Speech and Song)](https://zenodo.org/record/1188976) — a validated, actor-recorded dataset with 8 emotion labels.
+**Dataset:** [RAVDESS (Ryerson Audio-Visual Database of Emotional Speech and Song)](https://zenodo.org/record/1188976) a validated, actor-recorded dataset with 8 emotion labels.
 
 ---
 
