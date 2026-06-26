@@ -21,7 +21,7 @@ This project explores Speech Emotion Recognition (SER) by combining signal proce
 3. Extracts acoustic features: 40 MFCCs, average pitch (F0), and RMS energy
 4. Trains an MLPClassifier (128 → 64 hidden units) with StandardScaler normalization
 5. Evaluates using accuracy, classification report, and confusion matrix
-**Dataset:** [RAVDESS (Ryerson Audio-Visual Database of Emotional Speech and Song)](https://zenodo.org/record/1188976) a validated, actor-recorded dataset with 8 emotion labels.
+**Dataset:** [RAVDESS (Ryerson Audio-Visual Database of Emotional Speech and Song)](https://www.kaggle.com/datasets/uwrfkaggler/ravdess-emotional-speech-audio) a validated, actor-recorded dataset with 8 emotion labels.
  
 ---
 
@@ -81,11 +81,7 @@ The audio files used in this project are sourced from the **RAVDESS dataset** an
 **Download the dataset:**
 
 ```bash
-# Option 1: Download directly from Zenodo
-wget https://zenodo.org/record/1188976/files/Audio_Speech_Actors_01-24.zip
-
-# Option 2: Via Kaggle (requires Kaggle CLI)
-kaggle datasets download -d uwrfkaggler/ravdess-emotional-speech-audio
+kaggle datasets download -d uwrfkaggler/ravdess-emotional-speech-audio --unzip
 ```
 
 After downloading, place all `.wav` files into an `Audio/` folder at the root of this repository.
@@ -101,8 +97,8 @@ The third segment (position index 2) maps to the emotion label.
 ## Installation
 
 ```bash
-git clone https://github.com/Bimzt/speech-emotion-recognition-mlp.git
-cd speech-emotion-recognition-mlp
+git clone https://github.com/Bimzt/voice-emotion-detection-mlp.git
+cd voice-emotion-detection-mlp
 pip install -r requirements.txt
 ```
 
